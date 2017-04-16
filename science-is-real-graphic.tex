@@ -4,15 +4,15 @@
 \usepackage{tikzscale}
 \usepackage{geometry}
 \geometry{
-paperwidth=21in,
-paperheight=13in,
+paperwidth=24in,
+paperheight=18in,
 margin=0.5in
 }
 
 \begin{document}
 \setlength{\unitlength}{1in}
-\begin{picture}(20,12)
-\put(0,0){
+\begin{picture}(23,17)
+\put(0,2){
 \resizebox{\textwidth}{!}{
 \begin{tikzpicture}
   \def \OX {0.}
@@ -26,7 +26,7 @@ margin=0.5in
   \draw [black,thick,->] (\OX,\OY) 
   -- (0,\LY) node[black,left,rotate=90,text depth=16ex,text width = 3cm,align=center] 
   {global\\average\\temperature};
-
+ 
   \draw [scale=1,domain=0:5,variable=\x,color=red,thick,smooth]
   plot ({\x},{1 - 0.1*\x + exp(4*(\x-4.9))});
 
