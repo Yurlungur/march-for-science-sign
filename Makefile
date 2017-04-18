@@ -15,7 +15,7 @@ science-is-real-graphic: ${SCIENCE_IS_REAL}
 science-is-real-graphic-labels: ${WITH_LABELS}
 
 %.pdf: %.tex
-	pdflatex $^
+	latexmk -pdf $^
 
 %.png: %.pdf
 	convert $^ -quality 100 $@
@@ -27,7 +27,7 @@ science-is-real-graphic.png: science-is-real-graphic.pdf
 science-is-real-graphic-flat.png: science-is-real-graphic.png
 science-is-real-graphic.pdf: science-is-real-graphic.tex
 science-is-real-graphic-labels.png: science-is-real-graphic-labels.pdf
-science-is-real-graphic-labels-flat.png: science-is-real-graphic-labels-flat.png
+science-is-real-graphic-labels-flat.png: science-is-real-graphic-labels.png
 science-is-real-graphic-labels.pdf: science-is-real-graphic-labels.tex
 
 dummy: all default clean science-is-real-graphic
@@ -36,3 +36,5 @@ clean:
 	$(RM) *.log
 	$(RM) *.synctex.gz
 	$(RM) *.aux
+	$(RM) *.fdb_latexmk
+	$(RM) *.fls
